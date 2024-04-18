@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore;
 namespace Back.Controllers;
 
 [ApiController]
-[Route("api")]
+[Route("api/filme")]
 public class FilmeController : ControllerBase
 {
 
