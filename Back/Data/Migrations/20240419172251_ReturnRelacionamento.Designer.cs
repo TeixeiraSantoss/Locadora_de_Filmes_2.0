@@ -2,6 +2,7 @@
 using Back.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -9,9 +10,10 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Back.Migrations
 {
     [DbContext(typeof(Contexto))]
-    partial class ContextoModelSnapshot : ModelSnapshot
+    [Migration("20240419172251_ReturnRelacionamento")]
+    partial class ReturnRelacionamento
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "6.0.21");
@@ -20,9 +22,6 @@ namespace Back.Migrations
                 {
                     b.Property<int>("id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("INTEGER");
-
-                    b.Property<int>("GeneroId")
                         .HasColumnType("INTEGER");
 
                     b.Property<bool>("alugado")
@@ -39,8 +38,6 @@ namespace Back.Migrations
                         .HasColumnType("TEXT");
 
                     b.HasKey("id");
-
-                    b.HasIndex("GeneroId");
 
                     b.ToTable("Filmes");
                 });
@@ -76,22 +73,6 @@ namespace Back.Migrations
                     b.HasKey("id");
 
                     b.ToTable("Usuarios");
-                });
-
-            modelBuilder.Entity("Back.Model.FilmeModel", b =>
-                {
-                    b.HasOne("Back.Model.GeneroModel", "Genero")
-                        .WithMany("Filmes")
-                        .HasForeignKey("GeneroId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Genero");
-                });
-
-            modelBuilder.Entity("Back.Model.GeneroModel", b =>
-                {
-                    b.Navigation("Filmes");
                 });
 #pragma warning restore 612, 618
         }

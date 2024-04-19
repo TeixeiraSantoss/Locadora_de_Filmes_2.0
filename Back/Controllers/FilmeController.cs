@@ -25,22 +25,32 @@ public class FilmeController : ControllerBase
     public IActionResult Cadastrar([FromBody] FilmeModel filme)
     {
         try
-        {
-            //1º Criar um Objeto do tipo "FilmeModel" que vai receber os dados vindos do FRONT 
-            FilmeModel novoFilme = new FilmeModel
+        {            
+            //Verifica se o "GeneroId" corresponde a algum genero cadastrado no Banco
+            GeneroModel generoCadastrado = _ctx.Generos.FirstOrDefault(g => g.id == filme.GeneroId);
+
+            //Caso encontre um genero correspondente no banco, execulta o codigo
+            if(generoCadastrado != null)
             {
-                nome = filme.nome,
-                classif_ind = filme.classif_ind,
-                ano_lanc = filme.ano_lanc,
-                alugado = false
-            };
-            //Adicionando o "novoFilme" a tabela "Filmes" no Banco
-            _ctx.Filmes.Add(novoFilme);
-            //Salvando as alterações feitas
-            _ctx.SaveChanges();
+                //1º Criar um Objeto do tipo "FilmeModel" que vai receber os dados vindos do FRONT 
+                FilmeModel novoFilme = new FilmeModel
+                {
+                    nome = filme.nome,
+                    classif_ind = filme.classif_ind,
+                    ano_lanc = filme.ano_lanc,
+                    alugado = false,
+                    //Defini um genero pelo "id"
+                    GeneroId = filme.GeneroId
+                };
+                //Adicionando o "novoFilme" a tabela "Filmes" no Banco
+                _ctx.Filmes.Add(novoFilme);
+                //Salvando as alterações feitas
+                _ctx.SaveChanges();
+                
+                return Created("Filme Cadastrado com Sucesso", novoFilme);
+            }
 
-
-            return Created("Filme Cadastrado com Sucesso", novoFilme);
+            return BadRequest("Não foi possivel cadastrar um novo filme");
         }
         catch (Exception e)
         {

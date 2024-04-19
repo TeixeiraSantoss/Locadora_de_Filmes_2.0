@@ -2,6 +2,7 @@
 using Back.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -9,9 +10,10 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Back.Migrations
 {
     [DbContext(typeof(Contexto))]
-    partial class ContextoModelSnapshot : ModelSnapshot
+    [Migration("20240419174347_RelacionamentoOk")]
+    partial class RelacionamentoOk
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "6.0.21");
@@ -81,17 +83,12 @@ namespace Back.Migrations
             modelBuilder.Entity("Back.Model.FilmeModel", b =>
                 {
                     b.HasOne("Back.Model.GeneroModel", "Genero")
-                        .WithMany("Filmes")
+                        .WithMany()
                         .HasForeignKey("GeneroId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.Navigation("Genero");
-                });
-
-            modelBuilder.Entity("Back.Model.GeneroModel", b =>
-                {
-                    b.Navigation("Filmes");
                 });
 #pragma warning restore 612, 618
         }
