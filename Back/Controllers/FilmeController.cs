@@ -62,9 +62,7 @@ public class FilmeController : ControllerBase
         try
         {
             //Verifica se o nome fornecido bate com o nome de algum "FilmeModel" registrado na tabela "Filmes"
-            List<FilmeModel>? filmeCadastrado = _ctx.Filmes.Where(f =>
-                f.nome.ToLower().Contains(nome.ToLower())
-            ).ToList();
+            FilmeModel filmeCadastrado = _ctx.Filmes.FirstOrDefault(f => f.nome == nome);
 
             if(filmeCadastrado != null)
             {

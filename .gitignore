@@ -1,0 +1,8 @@
+*.exe
+*.dll
+*.pdb
+*.user
+*.bak
+*.cache
+*.log
+*.vscode
