@@ -90,7 +90,7 @@ public class FilmeController : ControllerBase
 
     //
     //Listar Filmes
-    [HttpPost("listar")]
+    [HttpGet("listar")]
     public IActionResult Listar()
     {
         try
