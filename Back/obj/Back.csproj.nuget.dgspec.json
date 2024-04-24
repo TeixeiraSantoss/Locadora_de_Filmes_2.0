@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\ESTUDO\\Locadora de Filmes(C# e Angular)\\Back\\Back.csproj": {}
+    "D:\\ESTUDO\\Locadora(Filmes)\\Back\\Back.csproj": {}
   },
   "projects": {
-    "D:\\ESTUDO\\Locadora de Filmes(C# e Angular)\\Back\\Back.csproj": {
+    "D:\\ESTUDO\\Locadora(Filmes)\\Back\\Back.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\ESTUDO\\Locadora de Filmes(C# e Angular)\\Back\\Back.csproj",
+        "projectUniqueName": "D:\\ESTUDO\\Locadora(Filmes)\\Back\\Back.csproj",
         "projectName": "Back",
-        "projectPath": "D:\\ESTUDO\\Locadora de Filmes(C# e Angular)\\Back\\Back.csproj",
+        "projectPath": "D:\\ESTUDO\\Locadora(Filmes)\\Back\\Back.csproj",
         "packagesPath": "C:\\Users\\mathe\\.nuget\\packages\\",
-        "outputPath": "D:\\ESTUDO\\Locadora de Filmes(C# e Angular)\\Back\\obj\\",
+        "outputPath": "D:\\ESTUDO\\Locadora(Filmes)\\Back\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\mathe\\AppData\\Roaming\\NuGet\\NuGet.Config"

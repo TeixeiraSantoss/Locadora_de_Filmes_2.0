@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "j95fRPpIZnCV3L8IrWGlJTbPkJ0PXnrE1JyflFp4GW/SLyJ0rY4hWvPl1uXErD6BQFHmkk9sMAPk40hFD0FojQ==",
+  "dgSpecHash": "3vmZOmwNwshzGyZ8+cxJrjVYk+tY2Y8Nt5+11elvJuG6W/1pHwHgFKQeMmi0PJ8EGn4M/cydWIyPgCsrRjtGNQ==",
   "success": true,
-  "projectFilePath": "D:\\ESTUDO\\Locadora de Filmes(C# e Angular)\\Back\\Back.csproj",
+  "projectFilePath": "D:\\ESTUDO\\Locadora(Filmes)\\Back\\Back.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\mathe\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\mathe\\.nuget\\packages\\microsoft.data.sqlite.core\\6.0.21\\microsoft.data.sqlite.core.6.0.21.nupkg.sha512",
