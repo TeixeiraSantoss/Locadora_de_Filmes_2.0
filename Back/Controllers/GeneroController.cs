@@ -88,6 +88,26 @@ public class GeneroController : ControllerBase
     //Fim Buscar
     //
 
+
+    //
+    //"Buscar" po id
+    [HttpGet("buscar/{id}")]
+    public IActionResult BuscarId([FromRoute] int id)
+    {
+        try
+        {
+            GeneroModel generoCadastrado = _ctx.Generos.FirstOrDefault(g => g.id == id);
+            return Ok(generoCadastrado);
+        }
+        catch (Exception e)
+        {
+            return BadRequest(e);
+        }
+    }
+    //Fim Bucar
+    //
+
+
     //
     //Excluir
     [HttpDelete("excluir/{id}")]

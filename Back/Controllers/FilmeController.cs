@@ -27,7 +27,7 @@ public class FilmeController : ControllerBase
         try
         {            
             //Verifica se o "GeneroId" corresponde a algum genero cadastrado no Banco
-            GeneroModel generoCadastrado = _ctx.Generos.FirstOrDefault(g => g.id == filme.GeneroId);
+            GeneroModel? generoCadastrado = _ctx.Generos.FirstOrDefault(g => g.id == filme.GeneroId);
 
             //Caso encontre um genero correspondente no banco, execulta o codigo
             if(generoCadastrado != null)
@@ -39,6 +39,7 @@ public class FilmeController : ControllerBase
                     classif_ind = filme.classif_ind,
                     ano_lanc = filme.ano_lanc,
                     alugado = false,
+                    Genero = generoCadastrado,
                     //Defini um genero pelo "id"
                     GeneroId = filme.GeneroId
                 };
@@ -96,7 +97,8 @@ public class FilmeController : ControllerBase
         try
         {
             //1º Criar uma "List" para receber os dados do Banco
-            List<FilmeModel> filmes = _ctx.Filmes.ToList();
+            //".Include" para adicionar o "Genero" relacionado na listagem
+            List<FilmeModel> filmes = _ctx.Filmes.Include(x => x.Genero).ToList();
 
             //Caso a tabela "Filmes" esteja vazia, retorna um "NotFound()"
             //Caso tenha algum "FilmeModel" retorna um "Ok()" com os dados da lista
@@ -128,7 +130,7 @@ public class FilmeController : ControllerBase
                 //E salva as alterações
                 _ctx.SaveChanges();
 
-                return Ok("Filme Excluido");
+                return Ok(_ctx.Filmes.Include(x=>x.Genero).ToList());
             }
             return NotFound("Filme não encontrado");
         }

@@ -10,5 +10,5 @@ public class FilmeModel
     //Ao fazer um cadastro informar APENAS o "GeneroId", pois o EF identifica AUTOMATICAMENTE qual o genero está sendo informado
     public int GeneroId { get; set; }
     //Representa a relação de 1 para N com Genero
-    public GeneroModel Genero { get; set; }
+    public GeneroModel? Genero { get; set; }
 }
