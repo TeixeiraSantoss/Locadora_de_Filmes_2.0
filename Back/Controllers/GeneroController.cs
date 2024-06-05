@@ -115,13 +115,14 @@ public class GeneroController : ControllerBase
     {
         try
         {
+            List<GeneroModel> generos = _ctx.Generos.ToList();
             GeneroModel generoCadastrado = _ctx.Generos.FirstOrDefault(g => g.id == id);
 
             if(generoCadastrado != null)
             {
                 _ctx.Generos.Remove(generoCadastrado);
                 _ctx.SaveChanges();
-                return Ok("Genero excluido com sucesso");
+                return Ok(generos);
             }
 
             return NotFound("Nenhum genero encontrado");

@@ -119,6 +119,7 @@ public class FilmeController : ControllerBase
     {
         try
         {
+            List<FilmeModel> filmes = _ctx.Filmes.Include(x => x.Genero).ToList();
             //1º Faz uma busca pelo "id" recebido na tabela "Filmes"
             FilmeModel? filmeCadastrado = _ctx.Filmes.Find(id); 
             if(filmeCadastrado != null)
@@ -130,7 +131,7 @@ public class FilmeController : ControllerBase
                 //E salva as alterações
                 _ctx.SaveChanges();
 
-                return Ok(_ctx.Filmes.Include(x=>x.Genero).ToList());
+                return Ok(filmes);
             }
             return NotFound("Filme não encontrado");
         }

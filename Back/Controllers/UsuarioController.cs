@@ -102,6 +102,7 @@ public class UsuarioController : ControllerBase
     {
         try
         {
+            List<UsuarioModel> usuarios = _ctx.Usuarios.ToList(); 
             //"Find" é usado para encontrar uma entidade pela sua chave primaria
             //Nesse caso vai encontrar na tabela "Usuarios" um "usuario" com o "id" correspondente
             UsuarioModel? usuarioCadastrado = _ctx.Usuarios.Find(id);
@@ -113,7 +114,7 @@ public class UsuarioController : ControllerBase
 
                 //"SaveChanges" EXCLUI o usuario marcado na tabela
                 _ctx.SaveChanges();
-                return Ok("Usuario excluido com sucesso");
+                return Ok(usuarios);
             };
             
             return NotFound("Usuario não encontrado");            
