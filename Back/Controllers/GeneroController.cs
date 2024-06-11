@@ -28,7 +28,7 @@ public class GeneroController : ControllerBase
             _ctx.Generos.Add(novoGenero);
             _ctx.SaveChanges();
 
-            return Ok("Genero cadastrado com sucesso");
+            return Created("Genero cadastrado com sucesso", genero);
         }
         catch (Exception e)
         {
