@@ -5,7 +5,6 @@ public class FilmeModel
     public string nome { get; set; }
     public int classif_ind { get; set; }
     public int ano_lanc { get; set; }
-    public bool alugado { get; set; }
     //Chave estrangeira para Genero
     //Ao fazer um cadastro informar APENAS o "GeneroId", pois o EF identifica AUTOMATICAMENTE qual o genero está sendo informado
     public int GeneroId { get; set; }

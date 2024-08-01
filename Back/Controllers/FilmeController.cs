@@ -39,7 +39,6 @@ public class FilmeController : ControllerBase
                     nome = filme.nome,
                     classif_ind = filme.classif_ind,
                     ano_lanc = filme.ano_lanc,
-                    alugado = false,
                     Genero = generoCadastrado,
                     //Defini um genero pelo "id"
                     GeneroId = filme.GeneroId
@@ -88,6 +87,24 @@ public class FilmeController : ControllerBase
         }
     }
     //Fim Buscar
+    //
+
+    //
+    //Inicio Buscar por id
+        [HttpGet("buscar/{id}")]
+        public IActionResult BuscarId([FromRoute] int id)
+        {
+            try
+            {
+                FilmeModel filmeCadastrado = _ctx.Filmes.Find(id);
+                return Ok(filmeCadastrado);
+            }
+            catch (Exception e)
+            {
+                return BadRequest(e);
+            }
+        }
+    //Fim Buscar por id
     //
 
     //
@@ -142,5 +159,45 @@ public class FilmeController : ControllerBase
         }
     }
     //Fim Excluir
+    //
+
+    //
+    //Inicio Alterar
+
+    //Para poder alterar algum item é preciso: 
+    //1º identificar qual item vai ser alterado 
+    //2º receber um objeto do mesmo tipo com os novos valores
+    [HttpPost("alterar/{id}")]
+    public IActionResult Alterar([FromRoute] int id, [FromBody] FilmeModel filmeAlterado)
+    {
+        try
+        {
+            //Buscando um objeto com o "id" correspondente ao que foi passado
+            FilmeModel? filmeCadastrado = _ctx.Filmes.Find(id);
+
+            //Caso seja encontrado algum objeto, a condição será atendida e os
+            //dados seram alterados pelos dados do objeto enviado pela requisição
+            if(filmeCadastrado != null)
+            {
+                filmeCadastrado.nome = filmeAlterado.nome;
+                filmeCadastrado.classif_ind = filmeAlterado.classif_ind;
+                filmeCadastrado.ano_lanc = filmeAlterado.ano_lanc;
+                filmeCadastrado.GeneroId = filmeAlterado.GeneroId;
+
+                _ctx.Filmes.Update(filmeCadastrado);
+                _ctx.SaveChanges();
+
+                return Ok("Objeto alterado com sucesso");
+            }
+            return NotFound("Objeto não encontrado");
+        }
+        catch (Exception e)
+        {
+            
+            return BadRequest(e);
+        }
+    }
+
+    //Fim Alterar
     //
 }

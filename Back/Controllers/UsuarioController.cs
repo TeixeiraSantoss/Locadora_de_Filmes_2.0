@@ -81,9 +81,6 @@ public class UsuarioController : ControllerBase
     //Fim Login
     //
 
-
-
-
     //
     //Listar
     [HttpGet("listar")]
@@ -132,6 +129,24 @@ public class UsuarioController : ControllerBase
         }
     }
     //Fim Buscar
+    //
+
+    //
+    //Inicio Buscar por id
+        [HttpGet("buscar/{id}")]
+        public IActionResult BuscarId([FromRoute] int id)
+        {
+            try
+            {
+                UsuarioModel usuarioCadastrado = _ctx.Usuarios.Find(id);
+                return Ok(usuarioCadastrado);
+            }
+            catch (Exception e)
+            {
+                return BadRequest(e);
+            }
+        }
+    //Fim Buscar por id
     //
 
     //

@@ -66,7 +66,7 @@ public class GeneroController : ControllerBase
     //
 
     //
-    //Buscar por nome
+    //Inicio Buscar
     [HttpGet("buscar")]
     public IActionResult Buscar([FromQuery] string nome)
     {
@@ -87,25 +87,6 @@ public class GeneroController : ControllerBase
         }
     }
     //Fim Buscar
-    //
-
-
-    //
-    //"Buscar" po id
-    [HttpGet("buscar/{id}")]
-    public IActionResult BuscarId([FromRoute] int id)
-    {
-        try
-        {
-            GeneroModel generoCadastrado = _ctx.Generos.FirstOrDefault(g => g.id == id);
-            return Ok(generoCadastrado);
-        }
-        catch (Exception e)
-        {
-            return BadRequest(e);
-        }
-    }
-    //Fim Bucar
     //
 
 
@@ -134,5 +115,39 @@ public class GeneroController : ControllerBase
         }
     }
     //Fim Excluir
+    //
+
+    //
+    //Inicio Alterar
+
+    [HttpPost("alterar/{id}")]
+    public IActionResult Alterar([FromRoute] int id, [FromBody] GeneroModel generoAlterado)
+    {
+        try
+        {
+            
+            GeneroModel? generoCadstrado = _ctx.Generos.Find(id);
+
+            if(generoCadstrado != null)
+            {
+                generoCadstrado.nome = generoAlterado.nome;
+
+                _ctx.Update(generoCadstrado);
+                _ctx.SaveChanges();
+
+                return Ok("Genero Alterado com sucesso");
+            }
+
+            return NotFound("Genero não encontrado");
+
+        }
+        catch (Exception e)
+        {
+            
+            return BadRequest(e);
+        }
+    }
+
+    //Fim Alterar
     //
 }
