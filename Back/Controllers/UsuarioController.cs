@@ -74,6 +74,14 @@ public class UsuarioController : ControllerBase
             return Unauthorized(new {message = "Senha ou Email invalido"});
         }
 
+        //recebe as informações do usuario para poder fazer a verificação da "Role"
+        var userInfo = new
+        {
+            usuarioCadastrado.username,
+            usuarioCadastrado.email,
+            usuarioCadastrado.Role
+        };
+
         return Ok(new {message = "Login realizado com sucesso!"});
 
     }

@@ -116,7 +116,7 @@ public class FilmeController : ControllerBase
         {
             //1º Criar uma "List" para receber os dados do Banco
             //".Include" para adicionar o "Genero" relacionado na listagem
-            List<FilmeModel> filmes = _ctx.Filmes.Include(x => x.Genero).ToList();
+            List<FilmeModel> filmes = _ctx.Filmes.ToList();
 
             //Caso a tabela "Filmes" esteja vazia, retorna um "NotFound()"
             //Caso tenha algum "FilmeModel" retorna um "Ok()" com os dados da lista
