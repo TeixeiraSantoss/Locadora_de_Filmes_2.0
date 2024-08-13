@@ -31,9 +31,13 @@ Controle de Interface: O menu é exibido ou ocultado dinamicamente, dependendo d
 Como rodar o projeto?
 
 Passo 1: Clonar o Repositório
+
   Abrir o terminal ou prompt de comando.
+  
   Navegar até o diretório onde deseja clonar o repositório.
+  
   Clonar o repositório usando o comando:
+  
     git clone https://github.com/TeixeiraSantoss/Locadora_de_Filmes_2.0
 
 (TODOS OS PASSOS DO 2 AO 5 DEVEM SER FEITOS PELO TERMINAL NO DIRETORIO ESPECIFICADO PARA CADA PASSO)
