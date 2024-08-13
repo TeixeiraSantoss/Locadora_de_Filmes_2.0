@@ -28,6 +28,7 @@ Gerenciamento de Gêneros: Interface para listar, cadastrar, alterar e excluir g
 Acesso Diferenciado: Usuários comuns podem visualizar a lista de filmes, enquanto administradores têm acesso a todas as funcionalidades.
 Controle de Interface: O menu é exibido ou ocultado dinamicamente, dependendo da tela em que o usuário se encontra e de suas permissões.
 
+
 Como rodar o projeto?
 
 Passo 1: Clonar o Repositório
@@ -41,43 +42,65 @@ Passo 1: Clonar o Repositório
     git clone https://github.com/TeixeiraSantoss/Locadora_de_Filmes_2.0
 
 (TODOS OS PASSOS DO 2 AO 5 DEVEM SER FEITOS PELO TERMINAL NO DIRETORIO ESPECIFICADO PARA CADA PASSO)
+
 Passo 2: Configurar o Backend 
+
   Navegar até o diretório do backend:
+  
     cd ./Locadora(Filmes)/Backend
     
   Restaurar pacotes NuGet:
+  
     dotnet restore
     
   Aplicar as migrações para configurar o banco de dados:
+  
     dotnet ef database update
+    
   (Certifique-se de que o Entity Framework Core está instalado globalmente ou como uma ferramenta local no projeto).
   
   Rodar o backend:
+  
     dotnet run ou dotnet watch run
-    (O backend estará disponível, por padrão, em https://localhost:7187.)
+
+  (O backend estará disponível, por padrão, em https://localhost:7187.)
 
 Passo 3: Configurar o Frontend
+
   Abrir um novo terminal e navegar até o diretório do frontend:
+  
     cd ./Locadora(Filmes)/Front
     
   Instalar as dependências do Angular:
+  
     npm install
     
   Rodar o frontend:
+  
     ng serve -o
-    (O frontend estará disponível em http://localhost:4200.)
+    
+  (O frontend estará disponível em http://localhost:4200.)
 
 Passo 4: Acessar a Aplicação
+
   Abrir o navegador e acessar http://localhost:4200.
   
   Realizar o login para acessar as funcionalidades de acordo com o tipo de usuário:
+  
     Acessar como Usuario:
+    
       Email: 'teste'
-      Senha: 'teste'      
+      
+      Senha: 'teste'    
+      
     Acessar com Administrador:
+    
       Senha: '1234'
       
 Passo 5: Desligar a Aplicação
+
   Parar o frontend: No terminal onde está rodando o Angular, pressione Ctrl + C.
+  
   Parar o backend: No terminal onde está rodando o backend, pressione Ctrl + C.
+  
 Seguindo esses passos, você deverá ter o projeto rodando localmente em sua máquina.
