@@ -1,5 +1,5 @@
 # Locadora_de_Filmes_2.0
-Sobre o projeto:
+<h1>Sobre o projeto:</h1>
 
 Este projeto é uma aplicação web para gerenciar filmes em uma locadora. Ele foi desenvolvido utilizando uma combinação de tecnologias backend e frontend, com suporte para diferentes níveis de acesso (usuário e administrador) e uma interface amigável para cadastro, listagem e manipulação de dados de filmes e gêneros.
 
