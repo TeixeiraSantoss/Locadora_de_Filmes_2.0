@@ -42,7 +42,7 @@ Acesso Diferenciado: Usuários comuns podem visualizar a lista de filmes, enquan
 Controle de Interface: O menu é exibido ou ocultado dinamicamente, dependendo da tela em que o usuário se encontra e de suas permissões.
 
 
-Como rodar o projeto?
+<h1>Como rodar o projeto?</h1>
 
 Passo 1: Clonar o Repositório
 
