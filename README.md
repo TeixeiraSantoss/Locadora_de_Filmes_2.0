@@ -8,24 +8,37 @@ Tecnologias Utilizadas:
 Backend:
 
 C#: Linguagem de programação utilizada para desenvolver a API.
+
 Entity Framework Core: ORM utilizado para manipulação e persistência dos dados.
+
 SQLite: Banco de dados leve, utilizado para armazenar as informações de filmes, gêneros, e usuários.
+
 ASP.NET Core: Framework utilizado para construir a API RESTful.
+
 Frontend:
 
 Angular: Framework JavaScript utilizado para construir a interface do usuário.
+
 TypeScript: Linguagem de programação utilizada no desenvolvimento do frontend.
+
 Bootstrap: Framework CSS utilizado para estilizar a interface e torná-la responsiva.
+
 Autenticação e Autorização:
 
 Guards no Angular: Utilizados para proteger rotas e controlar o acesso baseado no tipo de usuário (usuário comum ou administrador).
+
 AuthService: Serviço personalizado utilizado para gerenciar a autenticação e autorização na aplicação.
+
 Funcionalidades:
 
 Autenticação de Usuários: Permite que usuários se autentiquem e acessem funcionalidades de acordo com seu nível de permissão.
+
 Gerenciamento de Filmes: Interface para listar, cadastrar, alterar e excluir filmes.
+
 Gerenciamento de Gêneros: Interface para listar, cadastrar, alterar e excluir gêneros de filmes.
+
 Acesso Diferenciado: Usuários comuns podem visualizar a lista de filmes, enquanto administradores têm acesso a todas as funcionalidades.
+
 Controle de Interface: O menu é exibido ou ocultado dinamicamente, dependendo da tela em que o usuário se encontra e de suas permissões.
 
 
