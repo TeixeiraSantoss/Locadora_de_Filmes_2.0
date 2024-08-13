@@ -5,7 +5,7 @@ Este projeto é uma aplicação web para gerenciar filmes em uma locadora. Ele f
 
 Tecnologias Utilizadas:
 
-Backend:
+<strong>Backend:</strong>
 
 C#: Linguagem de programação utilizada para desenvolver a API.
 
