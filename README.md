@@ -3,7 +3,7 @@
 
 Este projeto é uma aplicação web para gerenciar filmes em uma locadora. Ele foi desenvolvido utilizando uma combinação de tecnologias backend e frontend, com suporte para diferentes níveis de acesso (usuário e administrador) e uma interface amigável para cadastro, listagem e manipulação de dados de filmes e gêneros.
 
-Tecnologias Utilizadas:
+<strong>Tecnologias Utilizadas:</strong>
 
 <strong>Backend:</strong>
 
@@ -15,7 +15,7 @@ SQLite: Banco de dados leve, utilizado para armazenar as informações de filmes
 
 ASP.NET Core: Framework utilizado para construir a API RESTful.
 
-Frontend:
+<strong>Frontend:</strong>
 
 Angular: Framework JavaScript utilizado para construir a interface do usuário.
 
@@ -23,13 +23,13 @@ TypeScript: Linguagem de programação utilizada no desenvolvimento do frontend.
 
 Bootstrap: Framework CSS utilizado para estilizar a interface e torná-la responsiva.
 
-Autenticação e Autorização:
+<strong>Autenticação e Autorização:</strong>
 
 Guards no Angular: Utilizados para proteger rotas e controlar o acesso baseado no tipo de usuário (usuário comum ou administrador).
 
 AuthService: Serviço personalizado utilizado para gerenciar a autenticação e autorização na aplicação.
 
-Funcionalidades:
+<strong>Funcionalidades:</strong>
 
 Autenticação de Usuários: Permite que usuários se autentiquem e acessem funcionalidades de acordo com seu nível de permissão.
 
@@ -44,7 +44,7 @@ Controle de Interface: O menu é exibido ou ocultado dinamicamente, dependendo d
 
 <h1>Como rodar o projeto?</h1>
 
-Passo 1: Clonar o Repositório
+<strong>Passo 1: Clonar o Repositório</strong>
 
   Abrir o terminal ou prompt de comando.
   
@@ -56,7 +56,7 @@ Passo 1: Clonar o Repositório
 
 (TODOS OS PASSOS DO 2 AO 5 DEVEM SER FEITOS PELO TERMINAL NO DIRETORIO ESPECIFICADO PARA CADA PASSO)
 
-Passo 2: Configurar o Backend 
+<strong>Passo 2: Configurar o Backend</strong>
 
   Navegar até o diretório do backend:
   
@@ -78,7 +78,7 @@ Passo 2: Configurar o Backend
 
   (O backend estará disponível, por padrão, em https://localhost:7187.)
 
-Passo 3: Configurar o Frontend
+<strong>Passo 3: Configurar o Frontend</strong>
 
   Abrir um novo terminal e navegar até o diretório do frontend:
   
@@ -94,7 +94,7 @@ Passo 3: Configurar o Frontend
     
   (O frontend estará disponível em http://localhost:4200.)
 
-Passo 4: Acessar a Aplicação
+<strong>Passo 4: Acessar a Aplicação</strong>
 
   Abrir o navegador e acessar http://localhost:4200.
   
@@ -109,8 +109,8 @@ Passo 4: Acessar a Aplicação
     Acessar com Administrador:
     
       Senha: '1234'
-      
-Passo 5: Desligar a Aplicação
+
+<strong>Passo 5: Desligar a Aplicação</strong>
 
   Parar o frontend: No terminal onde está rodando o Angular, pressione Ctrl + C.
   
