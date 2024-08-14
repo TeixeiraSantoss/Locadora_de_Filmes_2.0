@@ -1,0 +1,23 @@
+<form>
+    <div class="m-3">
+      <label class="form-label">Nome</label>
+      <input type="text" autocomplete="off" class="form-control" [(ngModel)]="nome" name="nome">
+    </div>
+    <div class="m-3">
+      <label class="form-label">Classificação Indicativa</label>
+      <input type="text" autocomplete="off" class="form-control" [(ngModel)]="classif_ind" name="classif_ind">
+    </div>
+    <div class="m-3">
+      <label class="form-label">Ano de Lançamento</label>
+      <input type="text" autocomplete="off" class="form-control" [(ngModel)]="ano_lanc" name="ano_lanc">
+    </div>
+    <div class="m-3">
+        <label class="form-label">Genero</label>
+        <select [(ngModel)]="GeneroId" name="GeneroId">
+            <option *ngFor="let g of generos" [value]="g.id">{{g.nome}}</option>
+        </select>
+    </div>
+    <button type="submit" class="btn btn-primary btn-sm m-3" routerLink="/pages/filme/listar" (click)="alterar(filmeId)">Salvar</button>
+    <button type="submit" class="btn btn-link m-3" routerLink="/pages/filme/listar">Voltar</button>
+    
+  </form>

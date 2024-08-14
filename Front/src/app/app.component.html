@@ -1,0 +1,70 @@
+<!-- *ngIf vai fazer a verificação da rota para saber se exibe ou não a NavBar
+a regra de negocio foi definida no arquivo ".ts" -->
+<nav class="navbar navbar-expand-lg bg-body-tertiary" *ngIf="isLoggedIn()">
+
+    <!-- Inicio NavBar -->
+    <div class="container-fluid" *ngIf="showNavbar">
+      <a class="navbar-brand" routerLink="pages/filme/listar">Locadora</a>
+
+      <!-- Opções de Menu -->
+      <!-- Essa configuração vai aparece apartir de determinado tamanho de ttela -->
+      <button class="navbar-toggler" (click)="isCollapsedNav = !isCollapsedNav" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="true" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <!-- Div que contem as opções da NavBar -->
+      <div class="collapse navbar-collapse" id="navbarNav" [collapse]="isCollapsedNav" [isAnimated]="true">
+        <ul class="navbar-nav">
+
+          <!-- Opções de Filme -->
+          <div>
+            <button type="button" class="btn btn-light mx-2" (click)="isCollapsedFilm = !isCollapsedFilm"
+            [attr.aria-expanded]="!isCollapsedFilm" aria-controls="collapseBasic">
+              Filme
+            </button>                
+              <div id="collapseBasic" [collapse]="isCollapsedFilm" [isAnimated]="true">
+                <li class="nav-item" *ngIf="service.isAdmin()">
+                  <a class="nav-link active" aria-current="page" routerLink="pages/filme/cadastrar">Cadastrar</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" routerLink="pages/filme/listar">Lista</a>
+                </li>
+              </div>
+          </div>
+
+          <!-- Opções de Genero -->
+          <div *ngIf="service.isAdmin()">
+            <button type="button" class="btn btn-light mx-2" (click)="isCollapsedGen = !isCollapsedGen"
+            [attr.aria-expanded]="!isCollapsedGen" aria-controls="collapseBasic">
+              Genero
+            </button>                
+              <div id="collapseBasic" [collapse]="isCollapsedGen" [isAnimated]="true">
+                <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" routerLink="pages/genero/cadastrar">Cadastrar</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" routerLink="pages/genero/listar">Lista</a>
+                </li>
+              </div>
+          </div>
+
+          <!-- Opções de Usuario -->
+          <div *ngIf="service.isAdmin()">
+            <button type="button" class="btn btn-light mx-2" (click)="isCollapsedUser = !isCollapsedUser"
+            [attr.aria-expanded]="!isCollapsedUser" aria-controls="collapseBasic">
+              Usuario
+            </button>                
+              <div id="collapseBasic" [collapse]="isCollapsedUser" [isAnimated]="true">
+                <li class="nav-item">
+                  <a class="nav-link" routerLink="pages/usuario/listar">Lista</a>
+                </li>
+              </div>
+          </div>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  
+  <router-outlet>
+
+  </router-outlet>

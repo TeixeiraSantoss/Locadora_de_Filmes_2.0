@@ -1,0 +1,26 @@
+<h1>Lista de Generos</h1>
+
+<div class="container-fluid">
+ 
+    <div>
+      <label>Buscar:</label>
+      <input type="text" [(ngModel)]="termoPesquisa" placeholder="Nome do Genero">
+    </div>
+
+    <table class="table table-hover ">
+        <thead>
+          <tr>
+            <th scope="col">Genero</th>
+            <th scope="col">Excluir</th>
+          </tr>
+        </thead>
+
+        <!-- *ngIf="filmes && filmes.length" -->
+          <tbody class="table-group-divider" >
+          <tr *ngFor="let g of generosFiltrados">
+            <td>{{g.nome}}</td>
+            <button (click)="excluir(g.id)">excluir</button>
+          </tr>
+        </tbody>
+      </table>
+</div>

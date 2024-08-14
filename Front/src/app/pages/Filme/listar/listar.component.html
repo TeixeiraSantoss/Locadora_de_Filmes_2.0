@@ -1,0 +1,36 @@
+<h1>Lista de Filmes</h1>
+
+<div class="container-fluid" *ngIf="isLoggedIn()"> 
+ 
+    <div>
+      <label>Buscar:</label>
+      <input type="text" [(ngModel)]="termoPesquisa" placeholder="Nome do Filme">
+    </div>
+
+    <table class="table table-hover ">
+        <thead>
+          <tr>
+            <th scope="col">Nome</th>
+            <th scope="col">Genero</th>
+            <th scope="col">Ano de Lançamento</th>
+            <th scope="col">Classificação Indicativa</th>
+            <th scope="col" *ngIf="service.isAdmin()">Alterar</th>
+            <th scope="col" *ngIf="service.isAdmin()">Excluir</th>
+          </tr>
+        </thead>
+        <tbody class="table-group-divider" *ngIf="filmes && filmes.length">
+          <tr *ngFor="let f of filmesFiltrados">
+            <td>{{f.nome}}</td>
+            <td>{{f.Genero?.nome || "Desconhecido"}}</td>
+            <td>{{f.ano_lanc}}</td>
+            <td>{{f.classif_ind}}</td>
+            <td *ngIf="service.isAdmin()">
+              <button routerLink="/pages/filme/alterar/{{f.id}}">Alterar</button>
+            </td>
+            <td *ngIf="service.isAdmin()">  
+              <button (click)="excluir(f.id)">excluir</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+</div>
