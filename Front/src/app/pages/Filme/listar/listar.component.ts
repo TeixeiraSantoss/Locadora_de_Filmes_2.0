@@ -77,7 +77,7 @@ export class ListarComponent {
           this.generos = generos;
           // Mapear o gênero para cada filme
           this.filmes.forEach(filme => {
-            filme.Genero = this.generos.find(g => g.id === filme.GeneroId);
+            filme.genero = this.generos.find(g => g.id === filme.generoId);
           });
         },
         error: (erro) => {
