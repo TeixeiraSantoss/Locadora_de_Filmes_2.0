@@ -5,6 +5,6 @@ export interface FilmeModel{
     nome: string;
     classif_ind: number;
     ano_lanc: number;
-    GeneroId: number;
-    Genero?: GeneroModel;
+    generoId: number;
+    genero?: GeneroModel;
 }
