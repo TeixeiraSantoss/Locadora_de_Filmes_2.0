@@ -76,7 +76,7 @@ export class CadastrarComponent {
       nome: this.nome,
       classif_ind: Number.parseInt(this.classif_ind),
       ano_lanc: Number.parseInt(this.ano_lanc),
-      GeneroId: this.GeneroId
+      generoId: this.GeneroId
     }
 
     //Faz uma requisção para a API, e envia o objeto "filme"
