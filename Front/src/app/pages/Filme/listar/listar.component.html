@@ -21,7 +21,7 @@
         <tbody class="table-group-divider" *ngIf="filmes && filmes.length">
           <tr *ngFor="let f of filmesFiltrados">
             <td>{{f.nome}}</td>
-            <td>{{f.Genero?.nome || "Desconhecido"}}</td>
+            <td>{{f.genero?.nome || "Desconhecido"}}</td>
             <td>{{f.ano_lanc}}</td>
             <td>{{f.classif_ind}}</td>
             <td *ngIf="service.isAdmin()">
