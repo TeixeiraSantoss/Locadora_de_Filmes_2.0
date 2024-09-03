@@ -62,7 +62,7 @@ export class AlterarComponent {
                 this.nome = filme.nome;
                 this.classif_ind = filme.classif_ind.toString();
                 this.ano_lanc = filme.ano_lanc.toString();
-                this.GeneroId = filme.GeneroId;
+                this.GeneroId = filme.generoId;
               }
           })
 
@@ -81,7 +81,7 @@ export class AlterarComponent {
       nome: this.nome,
       classif_ind: Number.parseInt(this.classif_ind),
       ano_lanc: Number.parseInt(this.ano_lanc),
-      GeneroId: this.GeneroId
+      generoId: this.GeneroId
     }
 
     //Faz uma requisção para a API, e envia o objeto "filme"
