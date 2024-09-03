@@ -28,7 +28,7 @@ public class FilmeController : ControllerBase
         try
         {            
             //Verifica se o "GeneroId" corresponde a algum genero cadastrado no Banco
-            GeneroModel? generoCadastrado = _ctx.Generos.FirstOrDefault(g => g.id == filme.GeneroId);
+            GeneroModel? generoCadastrado = _ctx.Generos.FirstOrDefault(g => g.id == filme.generoId);
 
             //Caso encontre um genero correspondente no banco, execulta o codigo
             if(generoCadastrado != null)
@@ -39,9 +39,9 @@ public class FilmeController : ControllerBase
                     nome = filme.nome,
                     classif_ind = filme.classif_ind,
                     ano_lanc = filme.ano_lanc,
-                    Genero = generoCadastrado,
+                    genero = generoCadastrado,
                     //Defini um genero pelo "id"
-                    GeneroId = filme.GeneroId
+                    generoId = filme.generoId
                 };
                 //Adicionando o "novoFilme" a tabela "Filmes" no Banco
                 _ctx.Filmes.Add(novoFilme);
@@ -137,7 +137,7 @@ public class FilmeController : ControllerBase
     {
         try
         {
-            List<FilmeModel> filmes = _ctx.Filmes.Include(x => x.Genero).ToList();
+            List<FilmeModel> filmes = _ctx.Filmes.Include(x => x.genero).ToList();
             //1º Faz uma busca pelo "id" recebido na tabela "Filmes"
             FilmeModel? filmeCadastrado = _ctx.Filmes.Find(id); 
             if(filmeCadastrado != null)
@@ -182,7 +182,7 @@ public class FilmeController : ControllerBase
                 filmeCadastrado.nome = filmeAlterado.nome;
                 filmeCadastrado.classif_ind = filmeAlterado.classif_ind;
                 filmeCadastrado.ano_lanc = filmeAlterado.ano_lanc;
-                filmeCadastrado.GeneroId = filmeAlterado.GeneroId;
+                filmeCadastrado.generoId = filmeAlterado.generoId;
 
                 _ctx.Filmes.Update(filmeCadastrado);
                 _ctx.SaveChanges();
